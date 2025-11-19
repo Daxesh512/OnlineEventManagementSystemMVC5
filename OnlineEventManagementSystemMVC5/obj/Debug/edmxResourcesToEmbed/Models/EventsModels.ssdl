@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventDTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET_TUTORIAL\ONLINEEVENTMANAGEMENTSYSTEMMVC5\ONLINEEVENTMANAGEMENTSYSTEMMVC5\APP_DATA\EVENTDTO.MDF.dbo.TblAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="adminName" />
+      <PropertyRef Name="adminPass" />
+    </Key>
+    <Property Name="adminName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="adminPass" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET_TUTORIAL\ONLINEEVENTMANAGEMENTSYSTEMMVC5\ONLINEEVENTMANAGEMENTSYSTEMMVC5\APP_DATA\EVENTDTO.MDF.dbo.TblContact' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblContact">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="subject" />
+      <PropertyRef Name="message" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="subject" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET_TUTORIAL\ONLINEEVENTMANAGEMENTSYSTEMMVC5\ONLINEEVENTMANAGEMENTSYSTEMMVC5\APP_DATA\EVENTDTO.MDF.dbo.TblUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="firstName" />
+      <PropertyRef Name="lastName" />
+      <PropertyRef Name="userName" />
+      <PropertyRef Name="mobile" />
+      <PropertyRef Name="pass" />
+    </Key>
+    <Property Name="firstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="mobile" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EventDTOModelStoreContainer">
+    <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblAdmin].[adminName] AS [adminName], 
+[TblAdmin].[adminPass] AS [adminPass]
+FROM [dbo].[TblAdmin] AS [TblAdmin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblContact" EntityType="Self.TblContact" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblContact].[name] AS [name], 
+[TblContact].[email] AS [email], 
+[TblContact].[subject] AS [subject], 
+[TblContact].[message] AS [message]
+FROM [dbo].[TblContact] AS [TblContact]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblUser].[firstName] AS [firstName], 
+[TblUser].[lastName] AS [lastName], 
+[TblUser].[userName] AS [userName], 
+[TblUser].[mobile] AS [mobile], 
+[TblUser].[pass] AS [pass]
+FROM [dbo].[TblUser] AS [TblUser]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
